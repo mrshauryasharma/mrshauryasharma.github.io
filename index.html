@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaurya Sharma Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shaurya Sharma Portfolio</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -21,88 +25,112 @@
     </nav>
 </header>
 
-<!-- HOME -->
+<!-- HERO -->
 <section id="home">
-    <div class="home-content">
+    <div class="particles"></div>
+
+    <div class="home-content" data-aos="fade-up">
         <h1>Hi, I'm <span>Shaurya Sharma</span></h1>
-        <p>B.Tech ECE Student | Web Developer | Video Editor</p>
-        <a href="#contact" class="btn">Contact Me</a>
+        <p class="typing">B.Tech ECE Student | Web Developer | AI Enthusiast</p>
+        <a href="#contact" class="btn glow-btn">Contact Me</a>
     </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" data-aos="fade-right">
     <h2>About Me</h2>
     <p>
-        I am a B.Tech student at Gautam Buddha University with a strong passion for 
-        coding, web designing, and video editing. Over the past 3+ years, I have 
-        developed practical experience in video editing and programming. 
-        My goal is to combine creativity and technology to build impactful digital solutions.
+        I am a B.Tech ECE student at Gautam Buddha University with strong interest 
+        in coding, web development, and electronics systems. I combine creativity 
+        with technical knowledge to build real-world projects.
     </p>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-    <h2>Skills</h2>
+    <h2 data-aos="fade-up">Skills</h2>
 
     <div class="grid">
-        <div class="card">
+        <div class="card" data-aos="zoom-in">
             <h3>Programming</h3>
             <p>C, C++, Python, Java</p>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="zoom-in">
             <h3>Web Development</h3>
             <p>HTML, CSS, JavaScript, PHP</p>
         </div>
 
-        <div class="card">
-            <h3>Tools</h3>
-            <p>Git, GitHub, VS Code</p>
+        <div class="card" data-aos="zoom-in">
+            <h3>ECE Skills</h3>
+            <p>Embedded Systems, Sensors, IoT, Arduino</p>
         </div>
 
-        <div class="card">
-            <h3>Software</h3>
-            <p>Photoshop, Premiere Pro, Filmora</p>
+        <div class="card" data-aos="zoom-in">
+            <h3>Tools</h3>
+            <p>Git, GitHub, VS Code</p>
         </div>
     </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-    <h2>Projects</h2>
+    <h2 data-aos="fade-up">Projects</h2>
 
-    <div class="project">
-        <h3>Attendance Management System</h3>
-        <p>Web-based system using PHP & MySQL for managing student attendance.</p>
+    <div class="project" data-aos="fade-left">
+        <h3>Smart IoT Door Lock</h3>
+        <p>ESP32-based smart security system with RFID, sensors & Blynk integration.</p>
     </div>
 
-    <div class="project">
+    <div class="project" data-aos="fade-left">
         <h3>NeuroRevise</h3>
-        <p>AI-based study app with weak topic detection and analytics dashboard.</p>
+        <p>AI-powered study system with analytics and weak topic detection.</p>
     </div>
 
-    <div class="project">
-        <h3>AI Phone Detection System</h3>
-        <p>Python-based system using YOLOv8 to detect mobile phone usage.</p>
+    <div class="project" data-aos="fade-left">
+        <h3>AI Phone Detection</h3>
+        <p>YOLOv8-based system for detecting mobile phone usage.</p>
     </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" data-aos="fade-up">
     <h2>Contact Me</h2>
 
     <form>
         <input type="text" placeholder="Your Name" required>
         <input type="email" placeholder="Your Email" required>
         <textarea placeholder="Your Message"></textarea>
-        <button type="submit">Send</button>
+        <button type="submit" class="glow-btn">Send Message</button>
     </form>
 </section>
 
 <footer>
-    <p>© 2026 Shaurya Sharma | All Rights Reserved</p>
+    <p>© 2026 Shaurya Sharma</p>
 </footer>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({
+    duration: 1000,
+});
+</script>
+
+<!-- Typing Effect -->
+<script>
+const text = "B.Tech ECE Student | Web Developer | AI Enthusiast";
+let i = 0;
+function typing() {
+    if (i < text.length) {
+        document.querySelector(".typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 50);
+    }
+}
+document.querySelector(".typing").innerHTML = "";
+typing();
+</script>
 
 </body>
 </html>
