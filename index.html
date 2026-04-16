@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Shaurya Sharma | AI & IoT Innovator</title>
+<title>Shaurya Sharma | AI & IoT Innovator – Education</title>
 <!-- Font Awesome 6 (Free) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <!-- Google Fonts: Modern & Tech-oriented -->
@@ -225,6 +225,111 @@
     padding-bottom: 8px;
   }
 
+  /* Education cards - new stylish academic timeline */
+  .education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 950px;
+    margin: 1rem auto 0;
+  }
+
+  .edu-card {
+    background: rgba(12, 25, 45, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: 1.8rem;
+    padding: 1.6rem 2rem;
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .edu-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(180deg, #0ff, #00aaff);
+    box-shadow: 0 0 12px cyan;
+  }
+
+  .edu-card:hover {
+    transform: translateX(8px) scale(1.01);
+    background: rgba(20, 45, 75, 0.8);
+    border-color: cyan;
+    box-shadow: 0 0 22px rgba(0, 255, 255, 0.25);
+  }
+
+  .edu-header {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .edu-institution {
+    font-size: 1.7rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff, #b3f0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.3px;
+  }
+
+  .edu-date {
+    font-size: 0.9rem;
+    font-family: monospace;
+    background: rgba(0, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 40px;
+    color: #0ff;
+    border: 1px solid rgba(0,255,255,0.5);
+  }
+
+  .edu-degree {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #c2e0ff;
+    margin: 0.5rem 0 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .edu-degree i {
+    color: cyan;
+    font-size: 1.2rem;
+  }
+
+  .edu-activities {
+    margin-top: 0.8rem;
+    color: #b8d0ff;
+    line-height: 1.5;
+    border-left: 2px dashed cyan;
+    padding-left: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .chip-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(0, 255, 255, 0.12);
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    margin-top: 6px;
+    margin-right: 10px;
+    border: 0.5px solid cyan;
+  }
+
   /* about card */
   .about-card {
     background: rgba(15, 25, 45, 0.55);
@@ -435,6 +540,13 @@
     .project-title {
       font-size: 1.3rem;
     }
+    .edu-institution {
+      font-size: 1.3rem;
+    }
+    .edu-header {
+      flex-direction: column;
+      gap: 8px;
+    }
   }
 
   /* scroll reveal effect (simple intersection) */
@@ -465,6 +577,7 @@
     <ul class="nav-links">
       <li><a href="#home" class="nav-link">Home</a></li>
       <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
       <li><a href="#skills" class="nav-link">Skills</a></li>
       <li><a href="#projects" class="nav-link">Projects</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -490,9 +603,47 @@
   <div class="about-card reveal">
     <p><i class="fas fa-quote-left" style="color:cyan; margin-right:8px;"></i> I'm a B.Tech Electronics & Communication Engineering student at Gautam Buddha University, driven by the passion to merge embedded systems with cutting-edge AI. My journey spans IoT automation, full-stack web solutions, and real-time surveillance. I love creating impactful products — from smart door locks with facial recognition to plant care automation and AI-based phone detection. I constantly push boundaries to solve real-world problems with code & circuits.</p>
     <div style="margin-top: 1.5rem; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-      <span style="background: #0ff22d20; border:1px solid cyan; border-radius: 50px; padding: 5px 14px;"><i class="fas fa-laptop-code"></i> IoT Expert</span>
-      <span style="background: #0ff22d20; border:1px solid cyan; border-radius: 50px; padding: 5px 14px;"><i class="fas fa-brain"></i> AI/ML Integration</span>
-      <span style="background: #0ff22d20; border:1px solid cyan; border-radius: 50px; padding: 5px 14px;"><i class="fas fa-cloud-upload-alt"></i> Blynk & Cloud</span>
+      <span class="chip-badge"><i class="fas fa-laptop-code"></i> IoT Expert</span>
+      <span class="chip-badge"><i class="fas fa-brain"></i> AI/ML Integration</span>
+      <span class="chip-badge"><i class="fas fa-cloud-upload-alt"></i> Blynk & Cloud</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== NEW EDUCATION SECTION (Detailed from your data) ========== -->
+<section id="education">
+  <div class="section-title"><span>📖 Academic Journey</span></div>
+  <div class="education-container">
+    <!-- Gautam Buddha University Card -->
+    <div class="edu-card reveal">
+      <div class="edu-header">
+        <div class="edu-institution"><i class="fas fa-university"></i> Gautam Buddha University, Greater Noida</div>
+        <div class="edu-date">Jul 2025 – Present</div>
+      </div>
+      <div class="edu-degree">
+        <i class="fas fa-graduation-cap"></i> Bachelor of Technology - BTech, Electronics and Communication Engineering
+      </div>
+      <div class="edu-activities">
+        <i class="fas fa-bolt" style="color:cyan; margin-right:6px;"></i> Activities and societies: Badminton · Coding & Robotics Club · IoT Workshop Lead
+        <div style="margin-top: 8px;">🌟 Passionate about embedded systems, web development & AI integration. Currently diving deep into real-time IoT security frameworks and full-stack platforms.</div>
+        <div style="margin-top: 8px;"><span class="chip-badge"><i class="fas fa-microchip"></i> ECE Core</span> <span class="chip-badge"><i class="fas fa-robot"></i> AIoT Research</span></div>
+      </div>
+    </div>
+
+    <!-- Dehradun Public School Card (Higher Secondary) -->
+    <div class="edu-card reveal">
+      <div class="edu-header">
+        <div class="edu-institution"><i class="fas fa-school"></i> Dehradoon Public School</div>
+        <div class="edu-date">Apr 2024 – Feb 2025</div>
+      </div>
+      <div class="edu-degree">
+        <i class="fas fa-chalkboard-user"></i> Higher Secondary School, Mathematics and Computer Science
+      </div>
+      <div class="edu-activities">
+        <i class="fas fa-code"></i> Specialization in Mathematics + Computer Science · Programming fundamentals, data structures, and logical reasoning.
+        <div style="margin-top: 8px;">🏸 Active in sports & tech fests, developed early interest in automation and problem solving. Foundation for engineering excellence.</div>
+        <div style="margin-top: 8px;"><span class="chip-badge"><i class="fas fa-calculator"></i> Mathematics</span> <span class="chip-badge"><i class="fas fa-laptop"></i> Computer Science</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -552,7 +703,7 @@
 </footer>
 
 <script>
-  // smooth scrolling + active nav highlight
+  // smooth scrolling + active nav highlight (including education)
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
 
