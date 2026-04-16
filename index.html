@@ -388,18 +388,19 @@
     background: #0ff;
   }
 
-  /* floating socials */
+  /* floating socials - only linkedin & github */
   .social-mini {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
     margin-top: 2rem;
   }
 
   .social-mini a {
     color: #caf0ff;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     transition: 0.2s;
+    text-decoration: none;
   }
 
   .social-mini a:hover {
@@ -522,7 +523,7 @@
   </div>
 </section>
 
-<!-- CONTACT Section with working simulation + icons -->
+<!-- CONTACT Section with working simulation + icons (LinkedIn & GitHub only) -->
 <section id="contact">
   <div class="section-title"><span>📬 Let's Connect</span></div>
   <div class="contact-wrapper reveal">
@@ -534,10 +535,14 @@
       <p id="formFeedback" style="margin-top: 12px; font-size: 0.85rem; text-align: center;"></p>
     </form>
     <div class="social-mini">
-      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/shaurya-sharma200" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <!-- GitHub -->
+      <a href="https://github.com/mrshauryasharma" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
     </div>
   </div>
 </section>
@@ -614,14 +619,18 @@
     setTimeout(() => { feedback.innerHTML = ""; }, 4000);
   });
 
-  // Optional extra: dynamic year in footer
-  const yearSpan = document.querySelector("footer p");
-  if(yearSpan) {
-    // already static but no issue
-  }
-
-  // small glow on hover for any card effect
-  console.log("🔥 Shaurya's enhanced portfolio ready — IoT meets AI");
+  // Optional extra: smooth scroll for anchor links (ensuring native smooth)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if(targetId === "#") return;
+      const targetElem = document.querySelector(targetId);
+      if(targetElem) {
+        e.preventDefault();
+        targetElem.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
 </script>
 </body>
 </html>
