@@ -2,24 +2,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
+    font-family: Arial;
 }
 
 body {
-    background: #0f172a;
+    background: #020617;
     color: white;
+    overflow-x: hidden;
 }
 
 /* NAVBAR */
 header {
     position: fixed;
     width: 100%;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.6);
     backdrop-filter: blur(10px);
+    z-index: 1000;
 }
 
 nav {
@@ -40,38 +38,64 @@ nav ul li {
 nav a {
     color: white;
     text-decoration: none;
+    transition: 0.3s;
 }
 
-.logo {
-    color: #00f7ff;
+nav a:hover {
+    color: cyan;
 }
 
-/* HOME */
+/* HERO SECTION */
 #home {
     height: 100vh;
+    background: radial-gradient(circle, #0f172a, #020617);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, #1e3a8a, #9333ea);
+    position: relative;
 }
 
+/* ECE Circuit Background Effect */
+.particles::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/circuit-board.png');
+    opacity: 0.1;
+}
+
+/* TEXT */
 .home-content h1 {
     font-size: 3rem;
 }
 
 .home-content span {
-    color: #00f7ff;
+    color: cyan;
 }
 
-.btn {
-    display: inline-block;
+.typing {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #94a3b8;
+}
+
+/* BUTTON */
+.glow-btn {
     margin-top: 20px;
-    padding: 10px 20px;
-    background: #00f7ff;
+    padding: 12px 25px;
+    background: cyan;
     color: black;
+    border-radius: 30px;
     text-decoration: none;
-    border-radius: 5px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px cyan;
+}
+
+.glow-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px cyan;
 }
 
 /* SECTIONS */
@@ -82,55 +106,54 @@ section {
 
 h2 {
     margin-bottom: 20px;
-    color: #00f7ff;
+    color: cyan;
 }
 
-/* SKILLS */
+/* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     gap: 20px;
 }
 
+/* CARDS */
 .card {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 0 20px cyan;
 }
 
-/* PROJECTS */
+/* PROJECT */
 .project {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
     margin: 15px;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.project:hover {
+    box-shadow: 0 0 20px cyan;
 }
 
 /* CONTACT */
 form {
-    display: flex;
-    flex-direction: column;
     max-width: 400px;
     margin: auto;
 }
 
-form input, form textarea {
+input, textarea {
+    width: 100%;
     margin: 10px 0;
     padding: 10px;
-    border: none;
     border-radius: 5px;
-}
-
-button {
-    padding: 10px;
-    background: #00f7ff;
     border: none;
-    cursor: pointer;
 }
 
 /* FOOTER */
