@@ -6,7 +6,6 @@
 <title>Shaurya Sharma Portfolio</title>
 <link rel="stylesheet" href="style.css">
 
-<!-- Animation Library -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
@@ -25,14 +24,16 @@
     </nav>
 </header>
 
-<!-- HERO -->
+<!-- HOME -->
 <section id="home">
-    <div class="overlay"></div>
+    <div class="particles"></div>
 
     <div class="home-content" data-aos="fade-up">
         <h1>Hi, I'm <span>Shaurya Sharma</span></h1>
         <p class="typing"></p>
-        <a href="#projects" class="btn">View My Projects</a>
+
+        <!-- FIXED BUTTON -->
+        <a href="#projects" class="btn glow-btn">View My Projects</a>
     </div>
 </section>
 
@@ -40,8 +41,9 @@
 <section id="about" data-aos="fade-right">
     <h2>About Me</h2>
     <p>
-        B.Tech ECE student passionate about IoT, AI, and web development.
-        I build real-world projects combining hardware and software.
+        I am a B.Tech ECE student at Gautam Buddha University with strong passion for 
+        IoT systems, embedded electronics, and web development. I build real-world 
+        projects combining hardware and software technologies.
     </p>
 </section>
 
@@ -51,7 +53,7 @@
 
     <div class="grid">
         <div class="card">Programming: C, C++, Python, Java</div>
-        <div class="card">Web: HTML, CSS, JavaScript, PHP</div>
+        <div class="card">Web: HTML, CSS, JS, PHP</div>
         <div class="card">ECE: IoT, Sensors, Embedded Systems</div>
         <div class="card">Tools: Arduino IDE, GitHub, VS Code</div>
     </div>
@@ -59,16 +61,48 @@
 
 <!-- PROJECTS -->
 <section id="projects">
-    <h2 data-aos="fade-up">Projects</h2>
+    <h2 data-aos="fade-up">My Projects</h2>
 
-    <div class="project">🔐 Smart IoT Door Lock (ESP32, RFID, Sensors, Blynk)</div>
-    <div class="project">🌱 Smart Plant Care System (NodeMCU)</div>
-    <div class="project">👻 Ghost Node (Stealth IoT System)</div>
-    <div class="project">📡 AI Phone Detection (YOLOv8)</div>
-    <div class="project">📊 NeuroRevise (AI Study App)</div>
-    <div class="project">📋 Attendance System (PHP + MySQL)</div>
-    <div class="project">🚗 Bluetooth Car (Arduino + L298N)</div>
-    <div class="project">💡 Smart Home Automation</div>
+    <div class="project" data-aos="fade-left">
+        <h3>🔐 Smart IoT Door Lock System</h3>
+        <p>ESP32-CAM based smart security system using RFID, MQ-5 gas sensor, fire sensor, servo motor, LCD display and Blynk app integration.</p>
+    </div>
+
+    <div class="project" data-aos="fade-left">
+        <h3>🌱 Smart Plant Care System</h3>
+        <p>Automatic irrigation system using NodeMCU with soil moisture monitoring and remote control.</p>
+    </div>
+
+    <div class="project" data-aos="fade-left">
+        <h3>👻 Ghost Node (Security Concept)</h3>
+        <p>Advanced hidden IoT node system for stealth monitoring and remote alert system using ESP modules.</p>
+    </div>
+
+    <div class="project" data-aos="fade-left">
+        <h3>📡 AI Phone Detection System</h3>
+        <p>YOLOv8-based computer vision system for detecting mobile phone usage.</p>
+    </div>
+
+    <div class="project" data-aos="fade-left">
+        <h3>📊 NeuroRevise (AI Study App)</h3>
+        <p>Web-based AI study companion with analytics, weak topic detection, and performance tracking.</p>
+    </div>
+
+    <div class="project" data-aos="fade-left">
+        <h3>📋 Attendance Management System</h3>
+        <p>PHP + MySQL based system for managing student attendance with dashboards.</p>
+    </div>
+
+    <div class="project" data-aos="fade-left">
+        <h3>🚗 Bluetooth Controlled Car</h3>
+        <p>Arduino + L298N motor driver based robot car controlled via Bluetooth module.</p>
+    </div>
+
+    <div class="project" data-aos="fade-left">
+        <h3>💡 Smart Home Automation</h3>
+        <p>IoT-based system to control lights and appliances remotely using mobile app.</p>
+    </div>
+
 </section>
 
 <!-- CONTACT -->
@@ -78,8 +112,8 @@
     <form>
         <input type="text" placeholder="Your Name" required>
         <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Message"></textarea>
-        <button class="btn">Send</button>
+        <textarea placeholder="Your Message"></textarea>
+        <button class="glow-btn">Send</button>
     </form>
 </section>
 
@@ -87,12 +121,10 @@
     <p>© 2026 Shaurya Sharma</p>
 </footer>
 
-<!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 AOS.init({ duration: 1000 });
 
-// Typing Effect
 const text = "ECE Student | IoT Developer | AI Enthusiast | Web Developer";
 let i = 0;
 function typing() {
