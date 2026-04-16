@@ -44,30 +44,19 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* FIX */
     text-align: center;
     background: radial-gradient(circle, #0f172a, #020617);
 }
 
-/* FIX SPACING */
+/* ONLY FIX ADDED */
 .home-content {
-    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.home-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-}
-
-.home-content span {
-    color: cyan;
-    text-shadow: 0 0 15px cyan;
-}
-
-/* TEXT */
 .typing {
     margin: 15px 0;
-    color: #94a3b8;
 }
 
 /* BUTTON */
@@ -79,8 +68,6 @@ nav a {
     color: black;
     border-radius: 30px;
     box-shadow: 0 0 10px cyan;
-    text-decoration: none;
-    font-weight: bold;
     transition: 0.3s;
 }
 
