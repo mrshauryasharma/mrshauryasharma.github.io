@@ -10,12 +10,13 @@ body {
     color: white;
 }
 
-/* NAV */
+/* NAVBAR */
 header {
     position: fixed;
     width: 100%;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.7);
     backdrop-filter: blur(10px);
+    z-index: 1000;
 }
 
 nav {
@@ -45,28 +46,61 @@ nav a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: radial-gradient(circle, #0f172a, #020617);
+    background: linear-gradient(135deg, #020617, #0f172a, #020617);
+    position: relative;
+}
+
+/* ECE BACKGROUND */
+#home::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/circuit-board.png");
+    opacity: 0.08;
+}
+
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,255,255,0.1), transparent);
+}
+
+/* TEXT */
+.home-content {
+    position: relative;
+    z-index: 2;
 }
 
 .home-content h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
 .home-content span {
     color: cyan;
+    text-shadow: 0 0 15px cyan;
+}
+
+.typing {
+    margin: 10px 0;
+    color: #94a3b8;
 }
 
 /* BUTTON */
-.glow-btn {
-    padding: 12px 25px;
+.btn {
+    padding: 12px 28px;
     background: cyan;
     color: black;
     border-radius: 30px;
-    box-shadow: 0 0 10px cyan;
+    text-decoration: none;
+    font-weight: bold;
     transition: 0.3s;
+    box-shadow: 0 0 10px cyan;
 }
 
-.glow-btn:hover {
+.btn:hover {
     transform: scale(1.1);
     box-shadow: 0 0 25px cyan;
 }
@@ -98,8 +132,8 @@ h2 {
 /* PROJECT */
 .project {
     background: rgba(255,255,255,0.05);
-    margin: 15px;
-    padding: 20px;
+    margin: 10px;
+    padding: 15px;
     border-radius: 10px;
     transition: 0.3s;
 }
@@ -108,7 +142,7 @@ h2 {
     box-shadow: 0 0 20px cyan;
 }
 
-/* CONTACT */
+/* FORM */
 input, textarea {
     width: 100%;
     margin: 10px 0;
