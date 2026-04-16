@@ -10,13 +10,12 @@ body {
     color: white;
 }
 
-/* NAVBAR */
+/* NAV */
 header {
     position: fixed;
     width: 100%;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.6);
     backdrop-filter: blur(10px);
-    z-index: 1000;
 }
 
 nav {
@@ -45,37 +44,19 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* FIX */
     text-align: center;
-    background: linear-gradient(135deg, #020617, #0f172a, #020617);
-    position: relative;
+    background: radial-gradient(circle, #0f172a, #020617);
 }
 
-/* ECE BACKGROUND */
-#home::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url("https://www.transparenttextures.com/patterns/circuit-board.png");
-    opacity: 0.08;
-}
-
-/* OVERLAY */
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(0,255,255,0.1), transparent);
-}
-
-/* TEXT */
+/* FIX SPACING */
 .home-content {
-    position: relative;
-    z-index: 2;
+    margin-top: 80px;
 }
 
 .home-content h1 {
     font-size: 3.5rem;
+    margin-bottom: 10px;
 }
 
 .home-content span {
@@ -83,24 +64,27 @@ nav a {
     text-shadow: 0 0 15px cyan;
 }
 
+/* TEXT */
 .typing {
-    margin: 10px 0;
+    margin: 15px 0;
     color: #94a3b8;
 }
 
 /* BUTTON */
-.btn {
-    padding: 12px 28px;
+.glow-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
     background: cyan;
     color: black;
     border-radius: 30px;
+    box-shadow: 0 0 10px cyan;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
-    box-shadow: 0 0 10px cyan;
 }
 
-.btn:hover {
+.glow-btn:hover {
     transform: scale(1.1);
     box-shadow: 0 0 25px cyan;
 }
@@ -132,8 +116,8 @@ h2 {
 /* PROJECT */
 .project {
     background: rgba(255,255,255,0.05);
-    margin: 10px;
-    padding: 15px;
+    margin: 15px;
+    padding: 20px;
     border-radius: 10px;
     transition: 0.3s;
 }
@@ -142,7 +126,7 @@ h2 {
     box-shadow: 0 0 20px cyan;
 }
 
-/* FORM */
+/* CONTACT */
 input, textarea {
     width: 100%;
     margin: 10px 0;
