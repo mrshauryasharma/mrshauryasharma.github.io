@@ -2,294 +2,626 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shaurya Sharma Portfolio</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Shaurya Sharma | AI & IoT Innovator</title>
+<!-- Font Awesome 6 (Free) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<!-- Google Fonts: Modern & Tech-oriented -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-
-/* RESET */
-* {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial;
-}
+  }
 
-body {
-    background: #020617;
-    color: white;
-}
+  body {
+    font-family: 'Inter', 'Space Grotesk', sans-serif;
+    background: #010314;
+    color: #eef5ff;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
 
-/* NAVBAR */
-header {
+  /* animated gradient background */
+  .bg-animate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: radial-gradient(circle at 10% 20%, rgba(2, 20, 40, 1) 0%, #020617 100%);
+  }
+
+  .bg-animate::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: shiftBg 90s linear infinite;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  @keyframes shiftBg {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(80px, 80px); }
+  }
+
+  /* custom neon glow */
+  :root {
+    --cyan-glow: 0 0 8px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 210, 255, 0.4);
+    --card-border: rgba(0, 255, 255, 0.25);
+  }
+
+  /* NAVBAR – glassmorphism + floating */
+  header {
     position: fixed;
     width: 100%;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-}
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    padding: 0.8rem 2rem;
+    background: rgba(1, 8, 25, 0.75);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.25);
+    transition: all 0.3s;
+  }
 
-nav {
+  nav {
+    max-width: 1400px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding: 15px 50px;
-}
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-nav ul {
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, #0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
+  }
+
+  .nav-links {
     display: flex;
+    gap: 2rem;
     list-style: none;
-    gap: 25px;
-}
+  }
 
-nav a {
-    color: white;
+  .nav-links a {
+    color: #cbd5f0;
     text-decoration: none;
-}
+    font-weight: 500;
+    font-size: 1rem;
+    transition: 0.2s;
+    position: relative;
+  }
 
-nav a:hover {
+  .nav-links a:hover, .nav-links a.active {
+    color: #0ff;
+    text-shadow: 0 0 6px cyan;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background: #0ff;
+    transition: 0.3s;
+    box-shadow: 0 0 6px cyan;
+  }
+
+  .nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+  }
+
+  .hero-content h1 {
+    font-size: 4.2rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #ffffff, #9effff, #0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: fadeUp 1s ease;
+  }
+
+  .hero-content .highlight {
+    color: #0ff;
+    text-shadow: 0 0 12px cyan;
+    display: inline-block;
+  }
+
+  .hero-tagline {
+    font-size: 1.3rem;
+    margin: 1rem 0;
+    color: #a0b9e0;
+    letter-spacing: 1px;
+  }
+
+  .cyber-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 2rem;
+    padding: 14px 36px;
+    background: linear-gradient(95deg, #00ccff20, #00aaff30);
+    border: 1.5px solid #0ff;
+    border-radius: 60px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0ff;
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+    transition: 0.25s;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+
+  .cyber-btn:hover {
+    transform: scale(1.05);
+    background: #0ff;
+    color: #010314;
+    box-shadow: 0 0 28px cyan;
+    border-color: white;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(35px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Section Styling */
+  section {
+    padding: 100px 24px 80px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .section-title span {
+    background: linear-gradient(120deg, #fff, #0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    border-bottom: 3px solid cyan;
+    padding-bottom: 8px;
+  }
+
+  /* about card */
+  .about-card {
+    background: rgba(15, 25, 45, 0.55);
+    backdrop-filter: blur(8px);
+    border-radius: 2rem;
+    padding: 2rem;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    max-width: 900px;
+    margin: 0 auto;
+    transition: all 0.3s;
+  }
+
+  .about-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cbdff2;
+  }
+
+  /* Skills Grid Enhanced */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .skill-card {
+    background: rgba(12, 22, 45, 0.7);
+    backdrop-filter: blur(4px);
+    padding: 1.8rem 1rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    cursor: default;
+  }
+
+  .skill-card i {
+    font-size: 2.8rem;
+    color: #0ff;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 6px cyan;
+  }
+
+  .skill-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-card p {
+    color: #b0ceff;
+    font-size: 0.95rem;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-8px);
+    border-color: #0ff;
+    box-shadow: 0 10px 30px -12px rgba(0, 255, 255, 0.3);
+    background: rgba(0, 200, 255, 0.08);
+  }
+
+  /* Projects - modern glassmorphism + hover reveal */
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    margin-top: 2rem;
+  }
+
+  .project-item {
+    background: rgba(10, 20, 35, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-left: 5px solid #0ff;
+    transition: 0.25s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+
+  .project-item:hover {
+    transform: translateX(10px) scale(1.01);
+    background: rgba(20, 40, 65, 0.85);
+    border-left-width: 8px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  }
+
+  .project-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #9effff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .project-title i {
+    font-size: 1.7rem;
     color: cyan;
-}
+  }
 
-/* HERO */
-#home {
-    height: 100vh;
+  .project-desc {
+    margin-top: 10px;
+    color: #ccdeff;
+    line-height: 1.5;
+  }
+
+  /* Contact - modern form */
+  .contact-wrapper {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: rgba(0, 10, 25, 0.6);
+    backdrop-filter: blur(12px);
+    border-radius: 2rem;
+    padding: 2rem;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+  }
+
+  .input-group {
+    margin-bottom: 1.2rem;
+  }
+
+  .input-group input, .input-group textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    border-radius: 1.2rem;
+    font-size: 1rem;
+    color: white;
+    transition: 0.2s;
+    font-family: 'Inter', monospace;
+  }
+
+  .input-group input:focus, .input-group textarea:focus {
+    outline: none;
+    border-color: cyan;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+    background: rgba(0, 255, 255, 0.05);
+  }
+
+  .submit-btn {
+    background: linear-gradient(95deg, #0ff, #0aa);
+    border: none;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #010314;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .submit-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px cyan;
+    background: #0ff;
+  }
+
+  /* floating socials */
+  .social-mini {
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .social-mini a {
+    color: #caf0ff;
+    font-size: 1.6rem;
+    transition: 0.2s;
+  }
+
+  .social-mini a:hover {
+    color: cyan;
+    transform: translateY(-5px);
+    text-shadow: 0 0 12px cyan;
+  }
+
+  footer {
     text-align: center;
-    background: radial-gradient(circle, #0f172a, #020617);
-}
+    padding: 2rem;
+    background: #01041a;
+    border-top: 1px solid cyan;
+    font-size: 0.9rem;
+  }
 
-.home-content h1 {
-    font-size: 3.5rem;
-}
+  /* responsive */
+  @media (max-width: 800px) {
+    nav {
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hero-content h1 {
+      font-size: 2.8rem;
+    }
+    .section-title {
+      font-size: 2rem;
+    }
+    .project-item {
+      padding: 1.2rem;
+    }
+    .project-title {
+      font-size: 1.3rem;
+    }
+  }
 
-.home-content span {
-    color: cyan;
-    text-shadow: 0 0 20px cyan;
-}
+  /* scroll reveal effect (simple intersection) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
 
-.home-content p {
-    margin-top: 10px;
-    color: #94a3b8;
-}
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-.btn {
-    margin-top: 30px;
-    padding: 14px 40px;
-    background: linear-gradient(45deg, cyan, #00f7ff);
-    color: black;
-    border-radius: 50px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 0 20px cyan;
-}
-
-.btn:hover {
-    transform: scale(1.1);
-}
-
-/* SECTIONS */
-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-/* ABOUT */
-#about p {
-    max-width: 800px;
-    margin: auto;
-    margin-top: 15px;
-    color: #cbd5e1;
-}
-
-/* SKILLS */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.card {
-    padding: 25px;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(0,255,255,0.2);
-}
-
-.card i {
-    font-size: 25px;
-    color: cyan;
-    margin-bottom: 10px;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px cyan;
-}
-
-/* PROJECTS */
-.project {
-    max-width: 850px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.05);
-    text-align: left;
-}
-
-.project h3 {
-    color: cyan;
-    margin-bottom: 8px;
-}
-
-.project p {
-    color: #cbd5e1;
-    font-size: 14px;
-}
-
-/* CONTACT */
-#contact form {
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 20px;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.05);
-}
-
-input, textarea {
-    width: 100%;
-    margin: 10px 0;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-}
-
-button {
-    width: 100%;
-    padding: 14px;
+  /* Custom cursor glow effect (optional) */
+  ::selection {
     background: cyan;
-    border: none;
-    border-radius: 30px;
-    font-weight: bold;
-}
-
-/* FOOTER */
-footer {
-    background: black;
-    padding: 20px;
-}
-
+    color: #010314;
+  }
 </style>
 </head>
-
 <body>
+<div class="bg-animate"></div>
 
 <header>
-<nav>
-<h2>Shaurya</h2>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+  <nav>
+    <div class="logo"><i class="fas fa-microchip"></i> Shaurya<span style="color:#0ff;">.</span>Sharma</div>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<!-- HOME -->
-<section id="home">
-<div class="home-content">
-<h1>Hi, I'm <span>Shaurya Sharma</span></h1>
-<p>ECE Student | IoT Developer | AI Enthusiast | Web Developer</p>
-<a href="#projects" class="btn"><i class="fas fa-code"></i> View My Projects</a>
-</div>
+<!-- HERO Section -->
+<section id="home" class="hero">
+  <div class="hero-content reveal">
+    <h1>Hi, I'm <span class="highlight">Shaurya Sharma</span></h1>
+    <div class="hero-tagline">
+      <i class="fas fa-microchip"></i> ECE Innovator · IoT Architect · AI Enthusiast · Full Stack Edge
+    </div>
+    <p style="max-width: 600px; margin: 1rem auto; color: #b8d0ff;">Building the future where hardware meets intelligence — from smart security to AI-driven systems.</p>
+    <a href="#projects" class="cyber-btn"><i class="fas fa-arrow-down"></i> Explore My Work</a>
+  </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT Section -->
 <section id="about">
-<h2>About Me</h2>
-<p>
-I am a B.Tech ECE student at Gautam Buddha University with strong passion for IoT systems,
-embedded electronics, and web development. I build real-world projects combining hardware and software.
-</p>
+  <div class="section-title"><span>⚡ About Me</span></div>
+  <div class="about-card reveal">
+    <p><i class="fas fa-quote-left" style="color:cyan; margin-right:8px;"></i> I'm a B.Tech Electronics & Communication Engineering student at Gautam Buddha University, driven by the passion to merge embedded systems with cutting-edge AI. My journey spans IoT automation, full-stack web solutions, and real-time surveillance. I love creating impactful products — from smart door locks with facial recognition to plant care automation and AI-based phone detection. I constantly push boundaries to solve real-world problems with code & circuits.</p>
+    <div style="margin-top: 1.5rem; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+      <span style="background: #0ff22d20; border:1px solid cyan; border-radius: 50px; padding: 5px 14px;"><i class="fas fa-laptop-code"></i> IoT Expert</span>
+      <span style="background: #0ff22d20; border:1px solid cyan; border-radius: 50px; padding: 5px 14px;"><i class="fas fa-brain"></i> AI/ML Integration</span>
+      <span style="background: #0ff22d20; border:1px solid cyan; border-radius: 50px; padding: 5px 14px;"><i class="fas fa-cloud-upload-alt"></i> Blynk & Cloud</span>
+    </div>
+  </div>
 </section>
 
-<!-- SKILLS -->
+<!-- SKILLS Section Enhanced -->
 <section id="skills">
-<h2>Skills</h2>
-<div class="grid">
-<div class="card"><i class="fas fa-code"></i><p>C, C++, Python, Java</p></div>
-<div class="card"><i class="fas fa-globe"></i><p>HTML, CSS, JS, PHP</p></div>
-<div class="card"><i class="fas fa-microchip"></i><p>IoT, Sensors, Embedded</p></div>
-<div class="card"><i class="fas fa-tools"></i><p>Arduino, GitHub, VS Code</p></div>
-</div>
+  <div class="section-title"><span>🧠 Core Arsenal</span></div>
+  <div class="skills-grid">
+    <div class="skill-card reveal"><i class="fas fa-code"></i><h4>Languages</h4><p>C, C++, Python, Java, PHP, JS</p></div>
+    <div class="skill-card reveal"><i class="fab fa-html5"></i><h4>Web Tech</h4><p>HTML5, CSS3, React, Node.js, MySQL</p></div>
+    <div class="skill-card reveal"><i class="fas fa-microchip"></i><h4>Embedded & IoT</h4><p>ESP32, Arduino, NodeMCU, Sensors, MQTT</p></div>
+    <div class="skill-card reveal"><i class="fas fa-robot"></i><h4>AI & Tools</h4><p>YOLOv8, Blynk, Git, Firebase, Figma</p></div>
+  </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PROJECTS Section - super detailed, modern -->
 <section id="projects">
-<h2>My Projects</h2>
-
-<div class="project">
-<h3>🔐 Smart IoT Door Lock System</h3>
-<p>ESP32-CAM based smart security system with RFID authentication, gas sensor (MQ-5), fire sensor, servo lock system, LCD display, buzzer alerts and Blynk mobile app integration.</p>
-</div>
-
-<div class="project">
-<h3>🌱 Smart Plant Care System</h3>
-<p>NodeMCU based automatic irrigation system using soil moisture sensor with real-time monitoring and remote control via mobile app.</p>
-</div>
-
-<div class="project">
-<h3>👻 Ghost Node (Security Concept)</h3>
-<p>Hidden IoT surveillance node designed for stealth monitoring with wireless alerts using ESP modules for advanced security systems.</p>
-</div>
-
-<div class="project">
-<h3>📡 AI Phone Detection System</h3>
-<p>Computer Vision project using YOLOv8 to detect mobile phone usage in real-time for monitoring and restriction systems.</p>
-</div>
-
-<div class="project">
-<h3>📊 NeuroRevise (AI Study App)</h3>
-<p>Web-based study companion built with PHP & MySQL featuring analytics, weak topic detection, and performance tracking dashboard.</p>
-</div>
-
-<div class="project">
-<h3>📋 Attendance Management System</h3>
-<p>Role-based PHP + MySQL system with admin, teacher and student dashboards to manage attendance records and reports.</p>
-</div>
-
-<div class="project">
-<h3>🚗 Bluetooth Controlled Car</h3>
-<p>Arduino + L298N motor driver based robotic car controlled wirelessly using Bluetooth module and mobile app.</p>
-</div>
-
-<div class="project">
-<h3>💡 Smart Home Automation</h3>
-<p>IoT based home automation system to control lights and appliances remotely using mobile interface.</p>
-</div>
-
+  <div class="section-title"><span>🚀 Flagship Projects</span></div>
+  <div class="projects-container">
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-door-closed"></i> 🔐 Smart IoT Door Lock System</div><div class="project-desc">ESP32-CAM based advanced security with RFID, MQ-5 gas & flame sensors, servo motor, LCD + Blynk dashboard. Real-time alerts and facial image capture.</div></div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-seedling"></i> 🌱 Smart Plant Care System</div><div class="project-desc">NodeMCU + soil moisture sensor driven automatic irrigation, live monitoring via Blynk app, and water pump control – saves water & increases yield.</div></div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-ghost"></i> 👻 Ghost Node (Stealth Security)</div><div class="project-desc">Hidden IoT surveillance node built on ESP8266 for covert monitoring, trigger alerts, and remote actuation – ideal for restricted zones.</div></div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-mobile-alt"></i> 📡 AI Phone Detection System</div><div class="project-desc">YOLOv8 deep learning model to detect mobile phone usage in real-time via webcam. Useful for exam halls & safe driving zones.</div></div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-chalkboard-user"></i> 📊 NeuroRevise (AI Study App)</div><div class="project-desc">Full-stack PHP/MySQL web app with performance analytics, weak topic detection, and adaptive revision suggestions for students.</div></div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-calendar-check"></i> 📋 Attendance Management System</div><div class="project-desc">Role-based portal for admin, teachers, students – automated attendance marking, report generation, and real-time analytics.</div></div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-car"></i> 🚗 Bluetooth Controlled Car</div><div class="project-desc">Arduino + L298N motor driver with HC-05 Bluetooth, controlled via smartphone app – smooth navigation and obstacle awareness.</div></div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-home"></i> 💡 Smart Home Automation</div><div class="project-desc">Remote control of lights, fans & appliances via relay modules and mobile interface – IoT enabled home energy management.</div></div>
+  </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT Section with working simulation + icons -->
 <section id="contact">
-<h2>Contact Me</h2>
-<form>
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Your Email">
-<textarea placeholder="Your Message"></textarea>
-<button>Send</button>
-</form>
+  <div class="section-title"><span>📬 Let's Connect</span></div>
+  <div class="contact-wrapper reveal">
+    <form id="contactForm">
+      <div class="input-group"><input type="text" id="nameInput" placeholder="Your full name *" required></div>
+      <div class="input-group"><input type="email" id="emailInput" placeholder="Email address *" required></div>
+      <div class="input-group"><textarea rows="4" id="msgInput" placeholder="Tell me about your idea or collaboration..."></textarea></div>
+      <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+      <p id="formFeedback" style="margin-top: 12px; font-size: 0.85rem; text-align: center;"></p>
+    </form>
+    <div class="social-mini">
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
 </section>
 
 <footer>
-<p>© 2026 Shaurya Sharma</p>
+  <p>© 2026 Shaurya Sharma — Crafted with <i class="fas fa-heart" style="color: cyan;"></i> and IoT magic | All innovation driven by passion</p>
 </footer>
 
+<script>
+  // smooth scrolling + active nav highlight
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  function updateActiveSection() {
+    let current = "";
+    const scrollPos = window.scrollY + 150;
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if(scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if(link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveSection);
+  window.addEventListener("load", updateActiveSection);
+
+  // scroll reveal observer
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.15 });
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // form handling (mock toast / feedback with style)
+  const form = document.getElementById("contactForm");
+  const feedback = document.getElementById("formFeedback");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("nameInput").value.trim();
+    const email = document.getElementById("emailInput").value.trim();
+    const msg = document.getElementById("msgInput").value.trim();
+
+    if(name === "" || email === "") {
+      feedback.innerHTML = "⚠️ Please fill name and email.";
+      feedback.style.color = "#ffaa88";
+      setTimeout(() => { feedback.innerHTML = ""; }, 2500);
+      return;
+    }
+    if(!email.includes("@") || !email.includes(".")) {
+      feedback.innerHTML = "📧 Enter a valid email address.";
+      feedback.style.color = "#ffaa88";
+      setTimeout(() => { feedback.innerHTML = ""; }, 2500);
+      return;
+    }
+
+    // Success simulation
+    feedback.innerHTML = `✨ Thanks ${name}! I'll get back to you soon. ✨`;
+    feedback.style.color = "#0ff";
+    feedback.style.textShadow = "0 0 2px cyan";
+    form.reset();
+    setTimeout(() => { feedback.innerHTML = ""; }, 4000);
+  });
+
+  // Optional extra: dynamic year in footer
+  const yearSpan = document.querySelector("footer p");
+  if(yearSpan) {
+    // already static but no issue
+  }
+
+  // small glow on hover for any card effect
+  console.log("🔥 Shaurya's enhanced portfolio ready — IoT meets AI");
+</script>
 </body>
 </html>
