@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Ishaan Kaushik | ECE Innovator – Electronics & IoT</title>
+<title>Shaurya Sharma | AI & IoT Innovator – Education</title>
 <!-- Font Awesome 6 (Free) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <!-- Google Fonts: Modern & Tech-oriented -->
@@ -53,12 +53,13 @@
     100% { transform: translate(80px, 80px); }
   }
 
+  /* custom neon glow */
   :root {
     --cyan-glow: 0 0 8px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 210, 255, 0.4);
     --card-border: rgba(0, 255, 255, 0.25);
   }
 
-  /* NAVBAR – glassmorphism */
+  /* NAVBAR – glassmorphism + floating */
   header {
     position: fixed;
     width: 100%;
@@ -188,8 +189,14 @@
   }
 
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(35px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(35px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Section Styling */
@@ -218,7 +225,7 @@
     padding-bottom: 8px;
   }
 
-  /* Education cards (only Gautam Buddha University) */
+  /* Education cards - new stylish academic timeline */
   .education-container {
     display: flex;
     flex-direction: column;
@@ -341,10 +348,10 @@
     color: #cbdff2;
   }
 
-  /* Skills Grid - C, C++, Python, Embedded etc */
+  /* Skills Grid Enhanced */
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
   }
@@ -384,15 +391,12 @@
     background: rgba(0, 200, 255, 0.08);
   }
 
-  /* Projects - only Bluetooth Car + Motion based auto light */
+  /* Projects - modern glassmorphism + hover reveal */
   .projects-container {
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
     margin-top: 2rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .project-item {
@@ -432,7 +436,7 @@
     line-height: 1.5;
   }
 
-  /* Contact form + GitHub only */
+  /* Contact - modern form */
   .contact-wrapper {
     max-width: 700px;
     margin: 2rem auto;
@@ -489,6 +493,7 @@
     background: #0ff;
   }
 
+  /* floating socials - only linkedin & github */
   .social-mini {
     display: flex;
     justify-content: center;
@@ -498,7 +503,7 @@
 
   .social-mini a {
     color: #caf0ff;
-    font-size: 2rem;
+    font-size: 1.8rem;
     transition: 0.2s;
     text-decoration: none;
   }
@@ -517,6 +522,7 @@
     font-size: 0.9rem;
   }
 
+  /* responsive */
   @media (max-width: 800px) {
     nav {
       flex-direction: column;
@@ -543,6 +549,7 @@
     }
   }
 
+  /* scroll reveal effect (simple intersection) */
   .reveal {
     opacity: 0;
     transform: translateY(25px);
@@ -554,6 +561,7 @@
     transform: translateY(0);
   }
 
+  /* Custom cursor glow effect (optional) */
   ::selection {
     background: cyan;
     color: #010314;
@@ -565,7 +573,7 @@
 
 <header>
   <nav>
-    <div class="logo"><i class="fas fa-microchip"></i> Ishaan<span style="color:#0ff;">.</span>Kaushik</div>
+    <div class="logo"><i class="fas fa-microchip"></i> Shaurya<span style="color:#0ff;">.</span>Sharma</div>
     <ul class="nav-links">
       <li><a href="#home" class="nav-link">Home</a></li>
       <li><a href="#about" class="nav-link">About</a></li>
@@ -580,88 +588,110 @@
 <!-- HERO Section -->
 <section id="home" class="hero">
   <div class="hero-content reveal">
-    <h1>Hi, I'm <span class="highlight">Ishaan Kaushik</span></h1>
+    <h1>Hi, I'm <span class="highlight">Shaurya Sharma</span></h1>
     <div class="hero-tagline">
-      <i class="fas fa-microchip"></i> ECE Explorer · Arduino Enthusiast · IoT & AI Learner
+      <i class="fas fa-microchip"></i> ECE Innovator · IoT Architect · AI Enthusiast · Full Stack Edge
     </div>
-    <p style="max-width: 600px; margin: 1rem auto; color: #b8d0ff;">Building practical electronics, curious about emerging tech — from Bluetooth robotics to intelligent lighting.</p>
+    <p style="max-width: 600px; margin: 1rem auto; color: #b8d0ff;">Building the future where hardware meets intelligence — from smart security to AI-driven systems.</p>
     <a href="#projects" class="cyber-btn"><i class="fas fa-arrow-down"></i> Explore My Work</a>
   </div>
 </section>
 
-<!-- ABOUT Section - Updated as per Ishaan Kaushik's description -->
+<!-- ABOUT Section -->
 <section id="about">
   <div class="section-title"><span>⚡ About Me</span></div>
   <div class="about-card reveal">
-    <p><i class="fas fa-quote-left" style="color:cyan; margin-right:8px;"></i> My name is Ishaan Kaushik, and I am currently a first-year B.Tech student in Electronics and Communication Engineering at Gautam Buddha University. I have a strong interest in technology, especially in areas like electronics, Arduino projects, and emerging technologies such as Artificial Intelligence and IoT. I enjoy learning through practical work and projects, which helps me understand concepts better. I am a quick learner and always try to improve my technical as well as problem-solving skills. Apart from academics, I like exploring new tech ideas and working on innovative projects.</p>
+    <p><i class="fas fa-quote-left" style="color:cyan; margin-right:8px;"></i> I'm a B.Tech Electronics & Communication Engineering student at Gautam Buddha University, driven by the passion to merge embedded systems with cutting-edge AI. My journey spans IoT automation, full-stack web solutions, and real-time surveillance. I love creating impactful products — from smart door locks with facial recognition to plant care automation and AI-based phone detection. I constantly push boundaries to solve real-world problems with code & circuits.</p>
     <div style="margin-top: 1.5rem; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-      <span class="chip-badge"><i class="fas fa-microchip"></i> Arduino Enthusiast</span>
-      <span class="chip-badge"><i class="fas fa-lightbulb"></i> Electronics Prototyping</span>
-      <span class="chip-badge"><i class="fas fa-rocket"></i> Emerging Tech Explorer</span>
+      <span class="chip-badge"><i class="fas fa-laptop-code"></i> IoT Expert</span>
+      <span class="chip-badge"><i class="fas fa-brain"></i> AI/ML Integration</span>
+      <span class="chip-badge"><i class="fas fa-cloud-upload-alt"></i> Blynk & Cloud</span>
     </div>
   </div>
 </section>
 
-<!-- EDUCATION Section: only Gautam Buddha University (removed Dehradun Public School) -->
+<!-- ========== NEW EDUCATION SECTION (Detailed from your data) ========== -->
 <section id="education">
   <div class="section-title"><span>📖 Academic Journey</span></div>
   <div class="education-container">
+    <!-- Gautam Buddha University Card -->
     <div class="edu-card reveal">
       <div class="edu-header">
         <div class="edu-institution"><i class="fas fa-university"></i> Gautam Buddha University, Greater Noida</div>
-        <div class="edu-date">2025 – Present</div>
+        <div class="edu-date">Jul 2025 – Present</div>
       </div>
       <div class="edu-degree">
-        <i class="fas fa-graduation-cap"></i> Bachelor of Technology - BTech, Electronics and Communication Engineering (First Year)
+        <i class="fas fa-graduation-cap"></i> Bachelor of Technology - BTech, Electronics and Communication Engineering
       </div>
       <div class="edu-activities">
-        <i class="fas fa-bolt" style="color:cyan; margin-right:6px;"></i> Activities and societies: Coding & Robotics Club · IoT Workshop Participant · Tech Innovation Group
-        <div style="margin-top: 8px;">🌟 First-year student passionate about building hands-on electronics, exploring embedded systems, and developing creative solutions with Arduino & sensors. Eager to contribute to real-world projects and collaborative tech environments.</div>
-        <div style="margin-top: 8px;"><span class="chip-badge"><i class="fas fa-microchip"></i> ECE Core</span> <span class="chip-badge"><i class="fas fa-plug"></i> Circuit Design</span></div>
+        <i class="fas fa-bolt" style="color:cyan; margin-right:6px;"></i> Activities and societies: Badminton · Coding & Robotics Club · IoT Workshop Lead
+        <div style="margin-top: 8px;">🌟 Passionate about embedded systems, web development & AI integration. Currently diving deep into real-time IoT security frameworks and full-stack platforms.</div>
+        <div style="margin-top: 8px;"><span class="chip-badge"><i class="fas fa-microchip"></i> ECE Core</span> <span class="chip-badge"><i class="fas fa-robot"></i> AIoT Research</span></div>
+      </div>
+    </div>
+
+    <!-- Dehradun Public School Card (Higher Secondary) -->
+    <div class="edu-card reveal">
+      <div class="edu-header">
+        <div class="edu-institution"><i class="fas fa-school"></i> Dehradoon Public School</div>
+        <div class="edu-date">Apr 2024 – Feb 2025</div>
+      </div>
+      <div class="edu-degree">
+        <i class="fas fa-chalkboard-user"></i> Higher Secondary School, Mathematics and Computer Science
+      </div>
+      <div class="edu-activities">
+        <i class="fas fa-code"></i> Specialization in Mathematics + Computer Science · Programming fundamentals, data structures, and logical reasoning.
+        <div style="margin-top: 8px;">🏸 Active in sports & tech fests, developed early interest in automation and problem solving. Foundation for engineering excellence.</div>
+        <div style="margin-top: 8px;"><span class="chip-badge"><i class="fas fa-calculator"></i> Mathematics</span> <span class="chip-badge"><i class="fas fa-laptop"></i> Computer Science</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SKILLS Section: C, C++, Python, Embedded, AI tools -->
+<!-- SKILLS Section Enhanced -->
 <section id="skills">
   <div class="section-title"><span>🧠 Core Arsenal</span></div>
   <div class="skills-grid">
-    <div class="skill-card reveal"><i class="fas fa-code"></i><h4>Languages</h4><p>C, C++, Python</p></div>
-    <div class="skill-card reveal"><i class="fas fa-microchip"></i><h4>Embedded & IoT</h4><p>Arduino, ESP8266, Sensors, Basic IoT Protocols</p></div>
-    <div class="skill-card reveal"><i class="fas fa-robot"></i><h4>AI & Tools</h4><p>Basic AI/ML concepts, Blynk, Git, Firebase</p></div>
+    <div class="skill-card reveal"><i class="fas fa-code"></i><h4>Languages</h4><p>C, C++, Python, Java, PHP, JS</p></div>
+    <div class="skill-card reveal"><i class="fab fa-html5"></i><h4>Web Tech</h4><p>HTML5, CSS3, React, Node.js, MySQL</p></div>
+    <div class="skill-card reveal"><i class="fas fa-microchip"></i><h4>Embedded & IoT</h4><p>ESP32, Arduino, NodeMCU, Sensors, MQTT</p></div>
+    <div class="skill-card reveal"><i class="fas fa-robot"></i><h4>AI & Tools</h4><p>YOLOv8, Blynk, Git, Firebase, Figma</p></div>
   </div>
 </section>
 
-<!-- PROJECTS Section: Only Bluetooth Controlled Car + Motion Based Auto Light -->
+<!-- PROJECTS Section - super detailed, modern -->
 <section id="projects">
-  <div class="section-title"><span>🚀 Featured Projects</span></div>
+  <div class="section-title"><span>🚀 Flagship Projects</span></div>
   <div class="projects-container">
-    <div class="project-item reveal">
-      <div class="project-title"><i class="fas fa-car"></i> 🚗 Bluetooth Controlled Car</div>
-      <div class="project-desc">Arduino-based robotic car controlled via smartphone using HC-05 Bluetooth module. Equipped with L298N motor driver for smooth navigation and precision movement. A hands-on project to understand wireless communication, motor control, and embedded C programming.</div>
-    </div>
-    <div class="project-item reveal">
-      <div class="project-title"><i class="fas fa-lightbulb"></i> 💡 Motion Based Auto Light</div>
-      <div class="project-desc">Intelligent lighting system using PIR motion sensor and Arduino that automatically turns lights on/off when human motion is detected. Energy-efficient design perfect for corridors, staircases, and automation learning. Integrated relay module for AC load control with safety considerations.</div>
-    </div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-door-closed"></i> 🔐 Smart IoT Door Lock System</div><div class="project-desc">ESP32-CAM based advanced security with RFID, MQ-5 gas & flame sensors, servo motor, LCD + Blynk dashboard. Real-time alerts and facial image capture.</div></div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-seedling"></i> 🌱 Smart Plant Care System</div><div class="project-desc">NodeMCU + soil moisture sensor driven automatic irrigation, live monitoring via Blynk app, and water pump control – saves water & increases yield.</div></div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-ghost"></i> 👻 Ghost Node (Stealth Security)</div><div class="project-desc">Hidden IoT surveillance node built on ESP8266 for covert monitoring, trigger alerts, and remote actuation – ideal for restricted zones.</div></div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-mobile-alt"></i> 📡 AI Phone Detection System</div><div class="project-desc">YOLOv8 deep learning model to detect mobile phone usage in real-time via webcam. Useful for exam halls & safe driving zones.</div></div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-chalkboard-user"></i> 📊 NeuroRevise (AI Study App)</div><div class="project-desc">Full-stack PHP/MySQL web app with performance analytics, weak topic detection, and adaptive revision suggestions for students.</div></div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-calendar-check"></i> 📋 Attendance Management System</div><div class="project-desc">Role-based portal for admin, teachers, students – automated attendance marking, report generation, and real-time analytics.</div></div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-car"></i> 🚗 Bluetooth Controlled Car</div><div class="project-desc">Arduino + L298N motor driver with HC-05 Bluetooth, controlled via smartphone app – smooth navigation and obstacle awareness.</div></div>
+    <div class="project-item reveal"><div class="project-title"><i class="fas fa-home"></i> 💡 Smart Home Automation</div><div class="project-desc">Remote control of lights, fans & appliances via relay modules and mobile interface – IoT enabled home energy management.</div></div>
   </div>
 </section>
 
-<!-- CONTACT Section + GitHub only (no LinkedIn) -->
+<!-- CONTACT Section with working simulation + icons (LinkedIn & GitHub only) -->
 <section id="contact">
   <div class="section-title"><span>📬 Let's Connect</span></div>
   <div class="contact-wrapper reveal">
     <form id="contactForm">
       <div class="input-group"><input type="text" id="nameInput" placeholder="Your full name *" required></div>
       <div class="input-group"><input type="email" id="emailInput" placeholder="Email address *" required></div>
-      <div class="input-group"><textarea rows="4" id="msgInput" placeholder="Share your ideas, collaboration or feedback..."></textarea></div>
+      <div class="input-group"><textarea rows="4" id="msgInput" placeholder="Tell me about your idea or collaboration..."></textarea></div>
       <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
       <p id="formFeedback" style="margin-top: 12px; font-size: 0.85rem; text-align: center;"></p>
     </form>
     <div class="social-mini">
-      <!-- GitHub profile representative (link placeholder, user can update) -->
-      <a href="https://github.com/ishaankaushik" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/shaurya-sharma200" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <!-- GitHub -->
+      <a href="https://github.com/mrshauryasharma" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
         <i class="fab fa-github"></i>
       </a>
     </div>
@@ -669,11 +699,11 @@
 </section>
 
 <footer>
-  <p>© 2026 Ishaan Kaushik — Built with <i class="fas fa-heart" style="color: cyan;"></i> and hands-on learning | Exploring the world of electronics & IoT</p>
+  <p>© 2026 Shaurya Sharma — Crafted with <i class="fas fa-heart" style="color: cyan;"></i> and IoT magic | All innovation driven by passion</p>
 </footer>
 
 <script>
-  // smooth scrolling + active nav highlight
+  // smooth scrolling + active nav highlight (including education)
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
 
@@ -709,7 +739,7 @@
   }, { threshold: 0.15 });
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // form handling simulation
+  // form handling (mock toast / feedback with style)
   const form = document.getElementById("contactForm");
   const feedback = document.getElementById("formFeedback");
 
@@ -717,6 +747,7 @@
     e.preventDefault();
     const name = document.getElementById("nameInput").value.trim();
     const email = document.getElementById("emailInput").value.trim();
+    const msg = document.getElementById("msgInput").value.trim();
 
     if(name === "" || email === "") {
       feedback.innerHTML = "⚠️ Please fill name and email.";
@@ -731,14 +762,15 @@
       return;
     }
 
-    feedback.innerHTML = `✨ Thanks ${name}! I'll reach out soon. ✨`;
+    // Success simulation
+    feedback.innerHTML = `✨ Thanks ${name}! I'll get back to you soon. ✨`;
     feedback.style.color = "#0ff";
     feedback.style.textShadow = "0 0 2px cyan";
     form.reset();
     setTimeout(() => { feedback.innerHTML = ""; }, 4000);
   });
 
-  // smooth scroll anchor links
+  // Optional extra: smooth scroll for anchor links (ensuring native smooth)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
